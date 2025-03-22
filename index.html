@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokurikulum Interaktif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .tab:hover {
+            background: #0056b3;
+        }
+        .tab.active {
+            background: #0056b3;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Kokurikulum Interaktif</h2>
+    
+    <div class="tabs">
+        <div class="tab active" onclick="openTab(event, 'unit-beruniform')">Unit Beruniform</div>
+        <div class="tab" onclick="openTab(event, 'kelab-persatuan')">Kelab & Persatuan</div>
+        <div class="tab" onclick="openTab(event, 'sukan-permainan')">Sukan & Permainan</div>
+    </div>
+
+    <div id="unit-beruniform" class="content active">
+        <h3>Unit Beruniform</h3>
+        <p>Senarai unit beruniform:</p>
+        <ul>
+            <li>Panduan Puteri</li>
+            <li>Pengakap</li>
+            <li>Kadet Bomba</li>
+            <li>Persatuan Bulan Sabit Merah</li>
+        </ul>
+    </div>
+
+    <div id="kelab-persatuan" class="content">
+        <h3>Kelab & Persatuan</h3>
+        <p>Antara kelab & persatuan yang tersedia:</p>
+        <ul>
+            <li>Kelab Komputer</li>
+            <li>Persatuan Sains & Matematik</li>
+            <li>Kelab Seni & Budaya</li>
+            <li>Kelab Bahasa</li>
+        </ul>
+    </div>
+
+    <div id="sukan-permainan" class="content">
+        <h3>Sukan & Permainan</h3>
+        <p>Beberapa pilihan sukan & permainan:</p>
+        <ul>
+            <li>Bola Sepak</li>
+            <li>Badminton</li>
+            <li>Catur</li>
+            <li>Bola Jaring</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function openTab(event, tabId) {
+        var contents = document.querySelectorAll('.content');
+        var tabs = document.querySelectorAll('.tab');
+
+        contents.forEach(content => content.classList.remove('active'));
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
